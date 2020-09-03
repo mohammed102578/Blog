@@ -63,7 +63,6 @@ $('#login-btn').click(function(e){
 if ($('#login-form')[0].checkValidity()) {
 e.preventDefault();
 $('#login-btn').val('please wait.....');
-
 $.ajax({
 	url:'php/action.php',
 	method:'post',
@@ -74,9 +73,7 @@ $.ajax({
 		if (response==='login'){
 			
 			window.location.replace("home.php");
- 
 
-			
 		}else{
 $("#AlertloginError").html(response);
 
