@@ -1,5 +1,7 @@
 <?php
-class Database{
+class DataBase{
+    const USERNAME="mohamed@gmail.com";
+    const PASSWORD="anythings"; 
 private $dsn="mysql:localhost=host;dbname=user_system";
 private $user="root";
 private $password="";
@@ -17,9 +19,6 @@ echo "failed to connect".$e->getMessage();
 }
 return $this->conn;
 }
-
-
-
 //=================================check input
 public function test_input($data){
 $data=trim($data);

@@ -32,7 +32,7 @@ public function login($email){
 	//return $count ;
 	return$row;
 
-}/////////////////////////////////////end function login($email)///////////////////////////////
+}//======================================================================================end function login
 
 public function currentUser($email){
 	$sql="SELECT * FROM users WHERE `email`=:email AND `deleted`!=0 ";
@@ -43,7 +43,16 @@ public function currentUser($email){
 	//return $count ;
 	return$row;
 
-}}//end of the class
+}
+//======================================================================================start function forgot
 
+public function forgot_password($token,$email){
+	$sql="UPDATE users SET `token`=:token ,`token_expier`=DATE_ADD(NOW(),INTERVAL 10 MINUTE) WHERE `email`=:email";
+	$stmt=$this->conn->prepare($sql);
+	$stmt->execute(['token'=>$token,'email'=>$email]);
+	return true;
 
-?>
+}
+//======================================================================================end function forgot
+
+}//end of the class

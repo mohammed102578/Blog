@@ -6,7 +6,8 @@ if (!isset($_SESSION['user'])) {
 	header('location:index.php');
 }else{
 $cmail=$_SESSION['user'];
-$cuser->currentUser($cmail);
+$sessionData=$cuser->currentUser($cmail);
+
 
 }
 

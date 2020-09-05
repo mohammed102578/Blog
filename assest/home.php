@@ -1,10 +1,9 @@
 <?php
-session_start();
 require_once 'php/session.php';
 echo"<pre>";
-print_r($data);
+echo $sessionData['name'];
 echo"</pre>";
-echo "<a href='log out.php'>log out</a>";
+echo "<a href='php/log out.php'>log out</a>";
 
 ?>
 

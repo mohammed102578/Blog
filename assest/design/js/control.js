@@ -40,10 +40,9 @@ $(document).ready(function(){
             		success:function(response){
             			$('#register-btn').val('Sign Up');
                        
-            			if(action=== 'register') {
+            			if(response==='register') {
             				window.location='home.php';
             			}else{
-                        
                         $("#alertErorr").html(response);
             			}
             		}//end success
@@ -71,8 +70,7 @@ $.ajax({
 	success: function(response){
 		$('#login-btn').val('Sign In');
 		if (response==='login'){
-			
-			window.location.replace("home.php");
+			window.location="home.php";
 
 		}else{
 $("#AlertloginError").html(response);
@@ -84,7 +82,68 @@ $("#AlertloginError").html(response);
 });//end ajax 
 }//end of if checkValidity
 });//end of the register form
-//===========================================================endt register ajax
+//===========================================================endt login ajax
 
+//===========================================================start forgot ajax
+$('#forgot-btn').click(function(e){
+	if ($('#forgot-form')[0].checkValidity()){
+e.preventDefault();
+$('#forgot-btn').val('please wait....');
+$.ajax({
+url:'php/action.php',
+method:'post',
+data:$('#forgot-form').serialize()+'&action=forgot',
+cache:false,
+success:function(response){
+	console.log('moha');
+if(response==='forgot'){
+	$('#forgot-btn').val('Rest password');
+	$('#forgot-form')[0].reset();
+	$('#forgotalert').html(response);
+}
+
+}//success
+});//end of ajax
+}//end of the check Validity
+});//end of the forgot form
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//===========================================================endt forgot ajax
 
 		});

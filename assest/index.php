@@ -79,7 +79,9 @@ if (isset($_SESSION['user'])) {
 			</div><!--end form group-->
 		</div><!--class grid systm--->
 	</div><!--end class row-->
-	<!--login form end--======================================================================--><!--register form start--==================================================================-->
+	<!--login form end--======================================================================-->
+	<!--register form start--==================================================================-->
+
 
 <div class="row  justify-content-center wrapper" id="register-box"style="
     height: 100vh;display: none;">
@@ -175,7 +177,9 @@ if (isset($_SESSION['user'])) {
 					<p class="lead text-center text-secondary">
 						To reset your password ,Enter the Registered E-mail address And we will send you the Reset Instructions on your email. 
 					</p>
+					
 					<form action="#" method="post" class="px-3" id="forgot-form">
+					<div id="forgotalert"></div>
 						<!--start email-->
 						<div class="input-group input-group-lg form-group">
 							<div class="input-group-prepend">
