@@ -1,8 +1,8 @@
 <?php
 class DataBase{
-    const USERNAME="mohamed@gmail.com";
-    const PASSWORD="anythings"; 
-private $dsn="mysql:localhost=host;dbname=user_system";
+    const USERNAME="mohammed10257883@gmail.com";
+    const PASSWORD='0911036308'; 
+private $dsn="mysql:host=localhost;dbname=user_system";
 private $user="root";
 private $password="";
 public $conn;
@@ -20,7 +20,8 @@ echo "failed to connect".$e->getMessage();
 return $this->conn;
 }
 //=================================check input
-public function test_input($data){
+public function testInput($data)
+{
 $data=trim($data);
 
 $data=stripslashes($data);
@@ -37,5 +38,6 @@ return '<div class="alert alert-'.$type.' alert-dismissible">
 <strong class="text-center">'.$message.'</strong>  </div>';
 
 }//end of the function show message
+
 }//end of the brakcit class
 ?>

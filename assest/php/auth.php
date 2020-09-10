@@ -1,9 +1,10 @@
 <?php
 require_once('config.php');
-class Auth extends Database{
+class Auth extends DataBase{
 //======================================================================start registeration
 //REGISTER NOW
-	public function register($name,$email,$password){
+	public function register($name,$email,$password)
+	{
 $sql="INSERT INTO users(name,email,password) VALUES(:name,:email,:password)";
 $stmt=$this->conn->prepare($sql);
 $stmt->execute(['name'=>$name,'email'=>$email,'password'=>$password]);
@@ -14,39 +15,29 @@ return true;
 
 
 //check if user already registred
-	public function user_exist($email){
+	public function userExist($email)
+	{
 $sql="SELECT * FROM users WHERE `email`=:email";
 $stmt=$this->conn->prepare($sql);
 $stmt->execute(['email'=>$email]);
-$result=$stmt->fetch(PDO::FETCH_ASSOC);
-return $result;
+$count=$stmt->rowcount();
+return $count;
 	}
 //======================================================================end registeration
 //check user  login
-public function login($email){
+
+public function findUser($email)
+{
 	$sql="SELECT * FROM users WHERE `email`=:email AND `deleted`!=0 ";
 	$stmt=$this->conn->prepare($sql);
 	$stmt->execute(['email'=>$email]);
 	$row=$stmt->fetch(PDO::FETCH_ASSOC);
-	$count=$stmt->rowcount();
-	//return $count ;
 	return$row;
 
 }//======================================================================================end function login
 
-public function currentUser($email){
-	$sql="SELECT * FROM users WHERE `email`=:email AND `deleted`!=0 ";
-	$stmt=$this->conn->prepare($sql);
-	$stmt->execute(['email'=>$email]);
-	$row=$stmt->fetch(PDO::FETCH_ASSOC);
-	$count=$stmt->rowcount();
-	//return $count ;
-	return$row;
-
-}
-//======================================================================================start function forgot
-
-public function forgot_password($token,$email){
+public function forgotPassword($token,$email)
+{
 	$sql="UPDATE users SET `token`=:token ,`token_expier`=DATE_ADD(NOW(),INTERVAL 10 MINUTE) WHERE `email`=:email";
 	$stmt=$this->conn->prepare($sql);
 	$stmt->execute(['token'=>$token,'email'=>$email]);
@@ -54,5 +45,22 @@ public function forgot_password($token,$email){
 
 }
 //======================================================================================end function forgot
+public function resetPassword($email,$token)
+{
+$sql="SELECT `id` FROM users WHERE 	`email`=:email AND `token`=:token AND `token`!='' AND `token_expier`>NOW() AND `deleted`!= 0";
+$stmt=$this->conn->prepare($sql);
+$stmt->execute(['email'=>$email,'token'=>$token]);
+$row=$stmt->fetch(PDO::FETCH_ASSOC);
+return $row;
+
+}//==================================================================================end of the function reset password
+public function update($pass,$email)
+{
+$sql="UPDATE users SET `password`=:pass ,`token`='' WHERE `email`=:email AND deleted != 0";
+$stmt=$this->conn->prepare($sql);
+$stmt->execute(['pass'=>$pass,'email'=>$email]);
+
+return true;
+}
 
 }//end of the class

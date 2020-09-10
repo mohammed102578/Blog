@@ -17,11 +17,11 @@ if (isset($_SESSION['user'])) {
 .css">
 <link rel="stylesheet" type="text/css" href="design/css/control.css">
 </head>
-<body class="back ground">
+<body class="background">
 
 <div class="container">
 	<!--login form start-->
-	<div id="MOH"></div>
+	
 	<div class="row  justify-content-center wrapper" id="login-box"style="
     height: 100vh;">
 		<div class="col-lg-10 my-auto">
@@ -153,11 +153,6 @@ if (isset($_SESSION['user'])) {
 			</div><!--end form group-->
 		</div><!--class grid systm--->
 	</div><!--end class row-->
-
-
-
-
-
 	<!--regiser form end--====================================================================-->
 <!--forgot password form start-->
 	<div class="row  justify-content-center wrapper" id="forgot-box"style="
@@ -187,7 +182,7 @@ if (isset($_SESSION['user'])) {
 									<i class="fa fa-envelope fa-lg"></i>
 								</span>
 							</div>
-							<input type="email" name="email" id="femail" class="form-control rounded-0" placeholder="E-mail" required="required" >
+							<input type="email" name="email" id="femail" class="form-control rounded-0" placeholder="E-mail" required="required" autofocus>
 						</div>
 						<!--end email-->
 						

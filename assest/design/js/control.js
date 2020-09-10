@@ -5,20 +5,20 @@ $(document).ready(function(){
 			});
 
 			$('#login-link').click(function(){
-			$("#register-box").hide();
+		$("#register-box").hide();
             $("#login-box").show();
             
 			});
 
 
-            $('#forgot-link').click(function(){
-			$("#login-box").hide();
+                  $('#forgot-link').click(function(){
+		$("#login-box").hide();
             $("#forgot-box").show();
             
 			});
 
-            $('#back-link').click(function(){
-			$("#forgot-box").hide();
+                  $('#back-link').click(function(){
+		$("#forgot-box").hide();
             $("#login-box").show();
             
 			});
@@ -95,54 +95,17 @@ method:'post',
 data:$('#forgot-form').serialize()+'&action=forgot',
 cache:false,
 success:function(response){
-	console.log('moha');
-if(response==='forgot'){
+
 	$('#forgot-btn').val('Rest password');
 	$('#forgot-form')[0].reset();
 	$('#forgotalert').html(response);
-}
+
+
 
 }//success
 });//end of ajax
 }//end of the check Validity
 });//end of the forgot form
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //===========================================================endt forgot ajax
 

@@ -6,8 +6,7 @@ require_once 'php/header.php';
 	<script src="design/js/bootstrap.min.js"></script>
 	<script src="design/js/control.js"></script>
 	<script src="design/js/popper.min.js"></script>
-	<script src="dataTables.bootstrap4.min.js"></script>
+	
 </body>
-
 </html>
 
