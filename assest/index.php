@@ -11,7 +11,7 @@ if (isset($_SESSION['user'])) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="design/css/bootstrap.min.css">
-	<title>user-managemnt</title>
+	<title>user-management</title>
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="design/css/font-awesome.min
 .css">
@@ -73,22 +73,22 @@ if (isset($_SESSION['user'])) {
 				<div class="card  rounded-right myColor p-4">
 					<h1 class="text-center font-weight-bold text-white">Hello Friend</h1>
 					<hr class="my-3 bg-light myhr">
-					<p class="text-center font-weight-bolder text-light lead">Enter Personal Detailes And Start Your Journey with us!</p>
+					<p class="text-center font-weight-bolder text-light lead">Enter Personal Details And Start Your Journey with us!</p>
 					<button class="btn btn-outline-light btn-lg align-self-center font-weight-bolder mt-4 myLinkBtn" id="register-link">Sign Up</button>
 				</div><!---end card 2-->
 			</div><!--end form group-->
-		</div><!--class grid systm--->
+		</div><!--class grid system--->
 	</div><!--end class row-->
 	<!--login form end--======================================================================-->
+
+
 	<!--register form start--==================================================================-->
-
-
 <div class="row  justify-content-center wrapper" id="register-box"style="
     height: 100vh;display: none;">
 		<div class="col-lg-10 my-auto">
 			<div class="card-group myShadow">
 				<div class="card  rounded-right myColor p-4"><!---start card 1-->
-					<h1 class="text-center font-weight-bold text-white">Wellcome Back</h1>
+					<h1 class="text-center font-weight-bold text-white">Welcome Back</h1>
 					<hr class="my-3 bg-light myhr">
 					<p class="text-center font-weight-bolder text-light lead"> To Keep Connect With Us Please login with your Personal Info.</p>
 					<button class="btn btn-outline-light btn-lg align-self-center font-weight-bolder mt-4 myLinkBtn" id="login-link">Sign In</button>
@@ -98,7 +98,7 @@ if (isset($_SESSION['user'])) {
 					<h1 class="text-center font-weight-bold text-primary">Create Account</h1>
 					<hr class="my-3">
 					<form action="#" method="post" class="px-3" id="register-form">
-						<div id="alertErorr"></div>
+						<div id="alertError"></div>
 						<!--start full name-->
 						<div class="input-group input-group-lg form-group">
 							<div class="input-group-prepend">
@@ -106,7 +106,7 @@ if (isset($_SESSION['user'])) {
 									<i class="fa fa-user fa-lg"></i>
 								</span>
 							</div>
-							<input type="text" name="name" id="name" class="form-control rounded-0" placeholder="Full Name" required="required" >
+							<input type="text" name="name" id="name" class="form-control rounded-0" placeholder="Full Name" required="required"  >
 						</div>
 						<!--end full name-->
 						<!--start email-->
@@ -151,9 +151,9 @@ if (isset($_SESSION['user'])) {
 				</div><!---end card 2-->
 				
 			</div><!--end form group-->
-		</div><!--class grid systm--->
+		</div><!--class grid system--->
 	</div><!--end class row-->
-	<!--regiser form end--====================================================================-->
+	<!--register form end--====================================================================-->
 <!--forgot password form start-->
 	<div class="row  justify-content-center wrapper" id="forgot-box"style="
     height: 100vh; display: none;">
@@ -194,7 +194,7 @@ if (isset($_SESSION['user'])) {
 				</div><!---end card 2-->
 				
 			</div><!--end form group-->
-		</div><!--class grid systm--->
+		</div><!--class grid system--->
 	</div><!--end class row-->
 	<!--forgot password form end--======================================================================-->
 </div><!--class container end-->

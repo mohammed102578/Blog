@@ -17,13 +17,14 @@ if (isset($_POST['action'])&&$_POST['action']=='register') {
 	$name=$user->testInput($_POST['name']);
 	$email=$user->testInput($_POST['remail']);
 	$password=$user->testInput($_POST['password']);
+	$cpassword=$user->testInput($_POST['cpassword']);
 	$pass=password_hash($password, PASSWORD_DEFAULT);
 
 	if($user->findUser($email)){
-echo $user->showMessage('warning','This E-mail is already registerd!');
+echo $user->showMessage('warning','This E-mail is already registered!');
 }else{
-
-	if ($user->register($name,$email,$pass)) {
+if($password==$cpassword){
+	if ($user->register($name, $email, $pass)) {
 		echo"register";
 		$_SESSION['user']=$email;
 
@@ -32,7 +33,7 @@ echo $user->showMessage('warning','This E-mail is already registerd!');
 		echo $user->showMessage('danger','some thing went wrong! try again later!');
 	}
 }
-
+}
 }//=============================================================================end register ajax
 //===============================================================================start login ajax
 if (isset($_POST['action'])&&$_POST['action']=='login') {
@@ -41,7 +42,7 @@ if (isset($_POST['action'])&&$_POST['action']=='login') {
 	$loginUser=$user->findUser($email);
 	
 	if ($loginUser) {
-		if (password_verify($password,$loginUser['password'] )) {
+		if (password_verify($password, $loginUser['password'] )) {
 			if (!empty($_POST['rem'])) {
 				setcookie('email',$email,time()+(30*24*60*60),'/');
 				setcookie('password',$password,time()+(30*24*60*60),'/');
@@ -101,7 +102,7 @@ try {
     $mail->send();
     echo $user->showMessage('success','We have send you the reset link in your E-mail ID , please check you e-mail');
 } catch (Exception $e) {
-	echo $user->showMessage('danger','somethig went wrong please try again later');
+	echo $user->showMessage('danger','something went wrong please try again later');
 }
 	}//end of the user not null
 	else{

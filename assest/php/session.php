@@ -18,6 +18,12 @@ $cphoto=$ses_data['photo'];
 $create=$ses_data['created_at'];
 $verified=$ses_data['verified'];
 
+if ($verified==1) {
+	$verified= "verified";
+}else{
+
+	$verified= "Not verified";
+}
 }
 
 

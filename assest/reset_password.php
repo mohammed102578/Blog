@@ -1,6 +1,4 @@
 <?php
-//$2y$10$vXV3sNWwWZ3.0jjWXgRM7ORSj.OKtxqPVN/q.cDvgrJnPK6PnvGeS
-
 require_once('php/auth.php');
 $user=new Auth();
 global $msg;
@@ -20,16 +18,15 @@ if($update==true){
 $msg='<div class="alert alert-success alert-dismissible">your password is updated <br><h1 class="text-center font-weight-bold">
 <a href="index.php">login</a></h1></div>';	
 
-}
-else{
-	$msg='<div class="alert alert-danger alert-dismissible">sorry some thing wen wrong no updated your password!</div>';
+}else{
+	$msg='<div class="alert alert-danger alert-dismissible">sorry something went wrong  your password not updated!</div>';
 }
 
-}//if password match
+}//if password not match
 else{
 	$msg='<div class="alert alert-danger alert-dismissible">your password is No matched!</div>';
 }
-}//end of the if request meyhod =post
+}//end of the if request method =post
 }//if found user 
 else{
 	header('location:index.php');
@@ -65,7 +62,7 @@ else{
 		<div class="col-lg-10 my-auto">
 			<div class="card-group myShadow">
 				<div class="card  rounded-right myColor p-4"><!---start card 1-->
-					<h1 class="text-center font-weight-bold text-white">Wellcome Dear </h1>
+					<h1 class="text-center font-weight-bold text-white">Welcome Dear </h1>
 					<hr class="my-3 bg-light myhr">
 					<br><br>
 					<h1 class="text-center font-weight-bold text-white"> Reset Your Password.</h1>
@@ -111,9 +108,9 @@ else{
 				</div><!---end card 2-->
 				
 			</div><!--end form group-->
-		</div><!--class grid systm--->
+		</div><!--class grid system--->
 	</div><!--end class row-->
-</div><!--end ckass container-->
+</div><!--end class container-->
 
 </body>
 </html>

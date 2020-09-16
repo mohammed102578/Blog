@@ -7,13 +7,13 @@ private $user="root";
 private $password="";
 public $conn;
 
-public function __construct(){
+public function __construct()
+{
 try{
 
 $this->conn=new pdo($this->dsn,$this->user,$this->password);
 
-}
-catch(PDOExecption $e){
+}catch(PDOException $e){
 echo "failed to connect".$e->getMessage();
 
 }
@@ -27,17 +27,18 @@ $data=trim($data);
 $data=stripslashes($data);
 
 $data=htmlspecialchars($data);
+$data=htmlentities($data);
 
 return$data;
 }
 //====================Error show message alert
 public function showMessage($type,$message){
-return '<div class="alert alert-'.$type.' alert-dismissible">
+return '<div class="alert alert-'.$type.' alert-dismissible fade show">
 
 <button typ="button" class="close" data-dismiss="alert">&times;</button>
 <strong class="text-center">'.$message.'</strong>  </div>';
 
 }//end of the function show message
 
-}//end of the brakcit class
+}//end of the brackets class
 ?>

@@ -30,8 +30,8 @@ $(document).ready(function(){
             if ($('#rpassword').val()!==$('#cpassword').val()) {
             	$('#passError').text('* password did not match!');
             	$('#register-btn').val('Sign Up');
-            }//end of if password not match
-            else{//startof the password is match
+            }else{//start of the password is match
+				
             	$('#passError').text('');
             	$.ajax({
             		url:'php/action.php',
@@ -43,7 +43,7 @@ $(document).ready(function(){
             			if(response==='register') {
             				window.location='home.php';
             			}else{
-                        $("#alertErorr").html(response);
+                        $("#alertError").html(response);
             			}
             		}//end success
 
@@ -82,7 +82,7 @@ $("#AlertloginError").html(response);
 });//end ajax 
 }//end of if checkValidity
 });//end of the register form
-//===========================================================endt login ajax
+//===========================================================end login ajax
 
 //===========================================================start forgot ajax
 $('#forgot-btn').click(function(e){
@@ -107,6 +107,6 @@ success:function(response){
 }//end of the check Validity
 });//end of the forgot form
 
-//===========================================================endt forgot ajax
+//===========================================================end forgot ajax
 
 		});

@@ -1,5 +1,5 @@
 <?php
-require_once 'php/session.php';
+require_once 'session.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,8 +13,7 @@ require_once 'php/session.php';
 <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="design/css/font-awesome.min
 .css">
-<link rel="stylesheet" type="text/css" href="design/css/control.css">
-<link rel="stylesheet" type="text/css" href="dataTables.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.21/datatables.min.css"/> 
 </head>
 <body>
 
@@ -57,7 +56,7 @@ require_once 'php/session.php';
 
 
   <h3>
-  	<?=basename($_SERVER['PHP_SELF']);?>
+  	<?php basename($_SERVER['PHP_SELF']);?>
 
   	</h3>
 
